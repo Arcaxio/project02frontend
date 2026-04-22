@@ -6,9 +6,9 @@ import { ThemeProvider } from './components/theme-provider';
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300">
+      <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />
-        <main className="flex-grow">
+        <main className="grow">
           <Body />
         </main>
         <Footer />

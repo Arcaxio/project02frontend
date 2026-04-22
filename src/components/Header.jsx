@@ -2,7 +2,6 @@ import React from 'react';
 import { useTheme } from '@/components/theme-provider';
 import { ModeToggle } from './ModeToggle';
 import { Menu, Sun, Moon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,8 +13,8 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container relative flex h-14 items-center justify-between px-4 mx-auto">
+    <header className="sticky top-0 z-50 w-full border-b bg-background">
+      <div className="relative flex h-14 items-center justify-between px-4 mx-auto">
         {/* Mobile Left Menu */}
         <div className="flex md:hidden">
           <DropdownMenu>
@@ -23,12 +22,14 @@ const Header = () => {
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle menu</span>
             </DropdownMenuTrigger>
+
             <DropdownMenuContent align="start" className="w-48">
               <DropdownMenuItem
                 className="flex justify-between items-center cursor-pointer"
                 onSelect={() => setTheme(theme === "light" ? "dark" : "light")}
               >
                 <span>Theme</span>
+
                 <div className="flex items-center">
                   {theme === "dark" ? (
                     <Moon className="h-4 w-4" />

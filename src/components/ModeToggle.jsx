@@ -9,7 +9,7 @@ export function ModeToggle({ className }) {
     <Button
       variant="outline"
       size="icon"
-      className={className}
+      className={`${className} cursor-pointer`}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       aria-label="Toggle theme"
     >
